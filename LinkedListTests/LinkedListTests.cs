@@ -53,7 +53,7 @@ namespace LinkedListTests
         {
             ParadigmExamples.LinkedList<int> linkedList = new ParadigmExamples.LinkedList<int>();
 
-            linkedList.AddFirst(5);
+            linkedList.AddAt(0, 5);
             linkedList.AddFirst(4);
             linkedList.AddFirst(3);
             linkedList.AddFirst(2);
@@ -288,6 +288,7 @@ namespace LinkedListTests
         {
             ParadigmExamples.LinkedList<int> linkedList = new ParadigmExamples.LinkedList<int>();
 
+            Assert.ThrowsException<IndexOutOfRangeException>(() => linkedList.AddAt(1, 6));
             Assert.ThrowsException<IndexOutOfRangeException>(() => linkedList.AddAt(6, 6));
             Assert.ThrowsException<Exception>(() => linkedList.AddAfter(6, 6));
 
